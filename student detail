@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    FILE *fp;
+    char data[100],fname[10];
+    printf("enter the file name to creat\n");
+    scanf("%s", fname);
+    fp = fopen(fname,"a");
+    if (fp == NULL)
+    {
+        printf("file does note creat");
+        exit(0);
+    }
+    
+    fgets(data, 100,stdin);
+    fprintf(fp,"name:- %s",data);
+    printf("enter your name\n");
+    fgets(data, 100,stdin);
+    fprintf(fp,"name:- %s",data);
+    printf("enter your roll number\n");
+    fgets(data,100 ,stdin);
+    fprintf(fp,"roll no.:- %s",data);
+    printf("enter your branch number\n");
+    fgets(data,100,stdin);
+    fprintf(fp,"branch:- %s",data);
+    printf("enter your contect number\n");
+    fgets(data,100,stdin);
+    fprintf(fp,"contect:- %s",data);
+    return 0;
+}
